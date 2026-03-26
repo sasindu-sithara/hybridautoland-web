@@ -1,11 +1,11 @@
-/* Hybrid Drive Auto — global styles */
+/* Hybrid Autoland — global styles */
 :root {
   --bg-deep: #0a0f14;
   --bg-card: #121a22;
   --bg-elevated: #1a242f;
-  --accent: #2dd4bf;
-  --accent-dim: #14b8a6;
-  --accent-glow: rgba(45, 212, 191, 0.35);
+  --accent: #42b1ab;
+  --accent-dim: #40a9a8;
+  --accent-glow: rgba(66, 177, 171, 0.35);
   --text: #e8eef4;
   --text-muted: #94a3b8;
   --border: rgba(148, 163, 184, 0.15);
@@ -69,8 +69,8 @@ a:hover {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(45, 212, 191, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(20, 184, 166, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(66, 177, 171, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(64, 169, 168, 0.08), transparent),
     radial-gradient(ellipse 50% 60% at 50% 100%, rgba(15, 23, 42, 0.9), transparent),
     var(--bg-deep);
 }
@@ -79,8 +79,8 @@ a:hover {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: linear-gradient(rgba(45, 212, 191, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 191, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(66, 177, 171, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 177, 171, 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black, transparent);
   pointer-events: none;
@@ -112,18 +112,52 @@ a:hover {
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--text);
+  flex-shrink: 0;
 }
 
-.logo-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-  display: grid;
-  place-items: center;
-  color: var(--bg-deep);
-  font-size: 1.25rem;
-  box-shadow: 0 0 24px var(--accent-glow);
+.logo:hover {
+  color: var(--text);
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.logo:hover .logo-img {
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transform: scale(1.02);
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding: 0.65rem 1.1rem;
+  background: #fff;
+  border-radius: var(--radius);
+  line-height: 0;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.footer-logo-link:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.footer-logo-link:hover img {
+  opacity: 1;
+}
+
+.footer-logo-img {
+  height: 52px;
+  width: auto;
+  max-width: min(300px, 88vw);
+  object-fit: contain;
 }
 
 .nav-primary {
@@ -143,7 +177,7 @@ a:hover {
 .nav-primary a:hover,
 .nav-primary a.active {
   color: var(--text);
-  background: rgba(45, 212, 191, 0.1);
+  background: rgba(66, 177, 171, 0.1);
 }
 
 .nav-cta {
@@ -310,9 +344,9 @@ a:hover {
   color: var(--accent);
   margin-bottom: 1rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(45, 212, 191, 0.12);
+  background: rgba(66, 177, 171, 0.12);
   border-radius: 999px;
-  border: 1px solid rgba(45, 212, 191, 0.25);
+  border: 1px solid rgba(66, 177, 171, 0.25);
 }
 
 .hero h1 {
@@ -359,7 +393,7 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(45, 212, 191, 0.15));
+  background: linear-gradient(135deg, transparent 40%, rgba(66, 177, 171, 0.15));
   pointer-events: none;
 }
 
@@ -458,7 +492,7 @@ a:hover {
 }
 
 .card:hover {
-  border-color: rgba(45, 212, 191, 0.35);
+  border-color: rgba(66, 177, 171, 0.35);
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
@@ -467,7 +501,7 @@ a:hover {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(45, 212, 191, 0.15);
+  background: rgba(66, 177, 171, 0.15);
   display: grid;
   place-items: center;
   font-size: 1.5rem;
@@ -536,7 +570,7 @@ a:hover {
 }
 
 .accordion-trigger:hover {
-  background: rgba(45, 212, 191, 0.06);
+  background: rgba(66, 177, 171, 0.06);
 }
 
 .accordion-trigger::after {
@@ -634,7 +668,7 @@ a:hover {
 .filter-btn.active {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(45, 212, 191, 0.1);
+  background: rgba(66, 177, 171, 0.1);
 }
 
 .gallery-grid {
@@ -838,7 +872,7 @@ form textarea {
 
 .form-msg.success {
   display: block;
-  background: rgba(45, 212, 191, 0.15);
+  background: rgba(66, 177, 171, 0.15);
   border: 1px solid var(--accent);
   color: var(--accent);
 }
